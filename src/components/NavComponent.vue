@@ -1,7 +1,7 @@
 <template>
   <nav>
     <div class="icon_logo">
-      <button :type="button" @click="openNav">
+      <button type="button" @click="openNav">
         <img :src="require('@/assets/inguz.svg')" alt="Icon Logo" />
       </button>
     </div>
@@ -11,7 +11,12 @@
           <a @mouseenter="checkWidth" @mouseleave="resetWidth">INICIO</a>
         </li>
         <li>
-          <a @mouseenter="checkWidth" @mouseleave="resetWidth">CONTACTANOS</a>
+          <a
+            class="color-verde"
+            @mouseenter="checkWidth"
+            @mouseleave="resetWidth"
+            >CONTACTANOS</a
+          >
         </li>
         <li>
           <a @mouseenter="checkWidth" @mouseleave="resetWidth"
@@ -26,6 +31,9 @@
 :root {
   --inguz_green: #99ca3b;
   --inguz_pink: #b93ec6;
+}
+.color-verde {
+  color: var(--inguz_green) !important;
 }
 nav {
   margin: 70px;

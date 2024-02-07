@@ -1,5 +1,5 @@
 <template>
-  <nav>
+  <nav class="nav-body">
     <div class="icon_logo">
       <button type="button" @click="openNav">
         <img :src="require('@/assets/inguz.svg')" alt="Icon Logo" />
@@ -36,7 +36,6 @@
   color: var(--inguz_green) !important;
 }
 nav {
-  margin: 70px;
   display: flex;
   align-items: center;
   height: 80px;
@@ -121,15 +120,25 @@ button {
     border-right: 80px solid transparent;
     border-top: 80px solid black;
     position: fixed;
-    transform: translateX(1903px);
+    transform: translateX(var(--nav-width));
   }
 }
 </style>
 <script setup lang="ts">
-function openNav(event: MouseEvent): void {
+function openNav(): void {
   let nav_bar = document.getElementsByClassName("nav-bar")[0];
+  let nav = document.getElementsByClassName("nav-body")[0];
   if (nav_bar) {
     nav_bar.classList.toggle("open");
+    navWidth();
+    if (nav_bar.classList.contains("open")) {
+      nav.style.setProperty(
+        "filter",
+        "drop-shadow(4px 7px 0px var(--inguz_pink))"
+      );
+    } else {
+      nav.style.setProperty("filter", "drop-shadow(0px 0px 0px transparent)");
+    }
   }
 }
 function checkWidth(event: MouseEvent) {
@@ -143,5 +152,10 @@ function checkWidth(event: MouseEvent) {
 function resetWidth(event: MouseEvent) {
   const target = event.currentTarget as HTMLElement;
   target.classList.remove("highlighted");
+}
+function navWidth() {
+  let target = document.getElementsByClassName("nav-bar")[0];
+  let navWidth = target.offsetWidth;
+  target.style.setProperty("--nav-width", `${navWidth}px`);
 }
 </script>

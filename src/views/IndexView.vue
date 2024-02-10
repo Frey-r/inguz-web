@@ -1,15 +1,20 @@
 <template>
   <NavComponent id="nav"></NavComponent>
+  <div class="home-frame">
+    <span>¡Impulsa tu negocio con una web a medida hoy mismo! 🚀</span>
+  </div>
   <BannerComponent id="BannerComponent"></BannerComponent>
+  <ServiceAccordion class="card-section"></ServiceAccordion>
 </template>
 
 <script>
 import axios from "axios";
 import NavComponent from "@/components/NavComponent.vue";
 import BannerComponent from "@/components/BannerComponent.vue";
+import ServiceAccordion from "@/components/ServiceAccordion.vue";
 export default {
   name: "IndexPage",
-  components: { BannerComponent, NavComponent },
+  components: { ServiceAccordion, BannerComponent, NavComponent },
   data() {
     return { msg: "pass" };
   },
@@ -36,16 +41,26 @@ export default {
 body {
   margin: 0;
   padding: 0;
-  background-color: #3a3a3a;
   overflow-x: hidden;
 }
 #nav {
   position: absolute;
-  top: 80px;
+  top: 50px;
   left: 50px;
   width: 100%;
 }
 #BannerComponent {
   display: none;
+}
+.home-frame {
+  height: 100svh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  span {
+    width: 50%;
+    font-size: var(--font-size-gigant);
+  }
 }
 </style>

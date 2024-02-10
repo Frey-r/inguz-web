@@ -49,11 +49,14 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: white;
+  background: white !important;
   border-radius: 100%;
   border: solid black 6px;
   height: 80px;
   width: 80px;
+  img {
+    transition: transform 0.3s ease-in-out;
+  }
   &:hover {
     img {
       transform: scale(1.2);
@@ -92,7 +95,7 @@ button {
       height: 20px;
       z-index: -1;
       transform: translate(7px, -21px);
-      transition: width 0.3s ease;
+      transition: all 0.2s ease;
     }
     &.highlighted::after {
       width: var(--text-width, 0);

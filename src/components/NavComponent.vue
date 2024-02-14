@@ -92,9 +92,9 @@ button {
       content: "";
       display: block;
       position: fixed;
-      height: 20px;
+      height: 16px;
       z-index: -1;
-      transform: translate(7px, -21px);
+      transform: translate(7px, -25px);
       transition: all 0.2s ease;
     }
     &.highlighted::after {

@@ -10,6 +10,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   --font-size-small: 1rem;
+  --font-size-big: 2.5rem;
   --font-size-gigant: 4rem;
   //Colores
   --inguz_green: #99ca3b;

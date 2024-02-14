@@ -5,7 +5,7 @@
     <text-machine-component></text-machine-component>
   </div>
   <BannerComponent id="BannerComponent"></BannerComponent>
-  <ServiceAccordion class="card-section"></ServiceAccordion>
+  <ServiceAccordion class="service-section"></ServiceAccordion>
 </template>
 
 <style>
@@ -30,6 +30,8 @@ body {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  gap: var(--space-m);
+  flex-direction: column;
   span {
     width: 50%;
     font-size: var(--font-size-gigant);

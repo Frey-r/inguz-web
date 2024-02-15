@@ -1,7 +1,9 @@
 <template>
   <div class="texto-dinamico-container">
     <p>Inguz te ofrece</p>
-    <h1 class="texto-dinamico" :style="{ color: textColor }">{{ textoActual }}</h1>
+    <h2 class="texto-dinamico" :style="{ color: textColor }">
+      {{ textoActual }}
+    </h2>
   </div>
 </template>
 
@@ -10,7 +12,7 @@ import { ref, onMounted } from "vue";
 
 const textoDinamico = ["Innovación", "Crecimiento", "Alcance"];
 const textoActual = ref("");
-let textColor = ""; // Define textColor here
+let textColor = ref(""); // Define textColor here
 
 onMounted(() => {
   escribirTexto(0);
@@ -18,7 +20,7 @@ onMounted(() => {
 
 async function escribirTexto(index) {
   const texto = textoDinamico[index];
-  txt_color(index);
+  textColor.value = txt_color(index);
   for (let i = 0; i < texto.length; i++) {
     textoActual.value += texto[i];
     await esperar(100); // Puedes ajustar la velocidad aquí
@@ -46,11 +48,7 @@ function esperar(ms) {
 }
 
 function txt_color(index) {
-  if (index % 2 === 0) {
-    textColor = "#99ca3b"; // Assign textColor here
-  } else {
-    textColor = "#b93ec6"; // Assign textColor here
-  }
+  return index % 2 === 0 ? "#99ca3b !important" : "#b93ec6 !important";
 }
 </script>
 
@@ -67,7 +65,15 @@ function txt_color(index) {
   display: inline-block;
   white-space: nowrap;
   overflow: hidden;
-  border-right: 4px solid;
+  border-right: 4px solid grey;
   width: fit-content;
+  animation: blink 1s infinite alternate; /* Aplica la animación "blink" */
+  font-weight: bold;
+}
+
+@keyframes blink {
+  to {
+    border-right-color: transparent !important; /* Cambia el color del borde a transparente */
+  }
 }
 </style>

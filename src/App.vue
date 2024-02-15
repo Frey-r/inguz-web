@@ -10,6 +10,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   --font-size-small: 1rem;
+  --font-size-medium: 1.5rem;
   --font-size-big: 2.5rem;
   --font-size-gigant: 4rem;
   //Colores
@@ -20,6 +21,7 @@
   //paddings | margins | gaps
   --space-s: 0.5rem;
   --space-m: 2.5rem;
+  --space-xxl: 5rem;
   --space-15percent: 15%;
 }
 </style>

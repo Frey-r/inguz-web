@@ -7,14 +7,17 @@
       class="service"
       :id="'service_' + service.id"
     >
-      <details
-        class="accordion-body transition duration-200 ease-in-out bg-white"
-        name="services"
-      >
+      <details class="accordion-body bg-white" name="services">
         <summary class="accordion-header">
-          <h1 class="accordion-title">
-            {{ service.name }} - {{ service.subtitle }}
-          </h1>
+          <article class="accordion-head">
+            <h1 class="accordion-title">
+              {{ service.name }}
+            </h1>
+            <!--suppress TypeScriptUnresolvedReference -->
+            <h2>
+              {{ service.subtitle }}
+            </h2>
+          </article>
           <!--suppress TypeScriptUnresolvedReference -->
           <h3 class="accordion-price">${{ service.price }}</h3>
         </summary>
@@ -22,7 +25,6 @@
           <p class="accordion-info">{{ service.info }}</p>
         </footer>
       </details>
-      <div class="shine"></div>
     </div>
   </div>
 </template>
@@ -46,8 +48,10 @@
   padding: 15px;
   display: flex;
   justify-content: space-between;
-  h1 {
+  height: 20%;
+  .accordion-head {
     text-align: left;
+    font-size: var(--font-size-big);
   }
 }
 .accordion-title {
@@ -58,7 +62,7 @@
   align-self: flex-end;
   font-weight: bold;
   color: var(--inguz_pink);
-  font-size: 1.4rem;
+  font-size: var(--font-size-gigant);
 }
 .accordion-footer {
   p {
@@ -66,6 +70,7 @@
     text-align: left;
     padding-left: var(--space-m);
     padding-right: var(--space-m);
+    font-size: var(--font-size-medium);
   }
 }
 </style>

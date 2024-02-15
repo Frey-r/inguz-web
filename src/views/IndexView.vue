@@ -1,11 +1,16 @@
 <template>
-  <NavComponent id="nav"></NavComponent>
-  <div class="home-frame">
-    <span>¡Impulsa tu negocio con una web a medida hoy mismo! 🚀</span>
-    <text-machine-component></text-machine-component>
-  </div>
-  <BannerComponent id="BannerComponent"></BannerComponent>
-  <ServiceAccordion class="service-section"></ServiceAccordion>
+  <header>
+    <NavComponent id="nav"></NavComponent>
+  </header>
+  <main>
+    <div class="home-frame">
+      <span>¡Impulsa tu negocio con una web a medida hoy mismo! 🚀</span>
+      <text-machine-component></text-machine-component>
+    </div>
+    <BannerComponent id="BannerComponent"></BannerComponent>
+    <ServiceAccordion class="service-section"></ServiceAccordion>
+  </main>
+  <footer></footer>
 </template>
 
 <style>
@@ -36,6 +41,11 @@ body {
     width: 50%;
     font-size: var(--font-size-gigant);
   }
+}
+.service-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xxl);
 }
 </style>
 

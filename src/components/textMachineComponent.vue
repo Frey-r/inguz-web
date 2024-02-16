@@ -53,6 +53,18 @@ function txt_color(index) {
 </script>
 
 <style>
+@keyframes blink {
+  0% {
+    border-right-color: dimgrey;
+  }
+  50% {
+    border-right-color: transparent;
+  }
+  100% {
+    border-right-color: dimgrey;
+  }
+}
+
 .texto-dinamico-container {
   display: flex;
   font-size: var(--font-size-big);
@@ -67,13 +79,8 @@ function txt_color(index) {
   overflow: hidden;
   border-right: 4px solid grey;
   width: fit-content;
-  animation: blink 1s infinite alternate; /* Aplica la animación "blink" */
+  animation: blink 1.8s infinite;
   font-weight: bold;
-}
-
-@keyframes blink {
-  to {
-    border-right-color: transparent !important; /* Cambia el color del borde a transparente */
-  }
+  filter: drop-shadow(0px 2px 1px rgba(1, 1, 1, 0.3));
 }
 </style>

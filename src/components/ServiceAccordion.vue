@@ -1,5 +1,5 @@
 <template>
-  <div class="services">
+  <section class="services">
     <!-- Utiliza v-for para generar una tarjeta por cada servicio -->
     <div
       v-for="service in services"
@@ -26,7 +26,7 @@
         </footer>
       </details>
     </div>
-  </div>
+  </section>
 </template>
 
 <style>
@@ -62,14 +62,13 @@
   align-self: flex-end;
   font-weight: bold;
   color: var(--inguz_pink);
-  font-size: var(--font-size-gigant);
+  font-size: var(--font-size-big);
 }
 .accordion-footer {
   p {
     color: black;
     text-align: left;
-    padding-left: var(--space-m);
-    padding-right: var(--space-m);
+    padding: var(--space-m);
     font-size: var(--font-size-medium);
   }
 }

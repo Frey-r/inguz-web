@@ -20,7 +20,7 @@ body {
   overflow-x: hidden;
 }
 #nav {
-  position: absolute;
+  position: fixed;
   top: 50px;
   left: 50px;
   width: 100%;

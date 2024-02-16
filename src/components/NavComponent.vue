@@ -28,10 +28,18 @@
   </nav>
 </template>
 <style>
-:root {
-  --inguz_green: #99ca3b;
-  --inguz_pink: #b93ec6;
+@keyframes horizontalBounce {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-6%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
+
 .color-verde {
   color: var(--inguz_green) !important;
 }
@@ -66,6 +74,17 @@ button {
     width: 50px;
     height: auto;
     background: transparent;
+  }
+  &:focus-visible {
+    outline: none;
+  }
+  &:after {
+    content: "👈 click para abrir el navegador";
+    position: fixed;
+    left: 6.5%;
+    font-size: var(--font-size-medium);
+    font-weight: lighter;
+    animation: horizontalBounce 1.2s ease-in-out infinite;
   }
 }
 .nav-bar {
@@ -131,6 +150,12 @@ button {
 function openNav(): void {
   let nav_bar = document.getElementsByClassName("nav-bar")[0];
   let nav = document.getElementsByClassName("nav-body")[0];
+  const styleSheet = document.styleSheets[0];
+  styleSheet.insertRule(
+    "button::after { display: none; }",
+    styleSheet.cssRules.length
+  );
+
   if (nav_bar) {
     nav_bar.classList.toggle("open");
     navWidth();

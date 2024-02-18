@@ -3,11 +3,13 @@
     <NavComponent id="nav"></NavComponent>
   </header>
   <main>
-    <div class="home-frame">
-      <span>¡Impulsa tu negocio con una web a medida hoy mismo! 🚀</span>
-      <text-machine-component></text-machine-component>
-    </div>
-    <BannerComponent id="BannerComponent"></BannerComponent>
+    <section class="home-section">
+      <div class="home-text">
+        <span>¡Impulsa tu negocio con una web a medida hoy mismo! 🚀</span>
+        <text-machine-component></text-machine-component>
+      </div>
+      <BannerImage class="home-image"></BannerImage>
+    </section>
     <ServiceAccordion class="service-section"></ServiceAccordion>
   </main>
   <footer></footer>
@@ -25,22 +27,37 @@ body {
   left: 50px;
   width: 100%;
 }
-#BannerComponent {
-  display: none;
-}
-.home-frame {
-  height: 100svh;
-  width: 100%;
+.home-section {
   display: flex;
-  align-items: center;
+  max-height: 100svh;
+}
+.home-text {
+  position: absolute;
+  height: 100svh;
+  width: 50%;
+  display: flex;
+  align-items: flex-start;
   justify-content: center;
   flex-wrap: wrap;
   gap: var(--space-m);
   flex-direction: column;
+  text-align: left;
+  margin-left: var(--space-15percent);
   span {
     width: 50%;
     font-size: var(--font-size-gigant);
   }
+}
+.home-image {
+  left: 50svw;
+  top: -20svh;
+  position: relative;
+  background-color: #11131d;
+  width: 160svw;
+  height: 126svh;
+  border-radius: 25%;
+  transform: rotate(23deg);
+  z-index: -1;
 }
 .service-section {
   display: flex;
@@ -52,16 +69,17 @@ body {
 <script>
 import axios from "axios";
 import NavComponent from "@/components/NavComponent.vue";
-import BannerComponent from "@/components/BannerComponent.vue";
 import ServiceAccordion from "@/components/ServiceAccordion.vue";
 import TextMachineComponent from "@/components/textMachineComponent.vue";
+import BannerImage from "@/components/bannerImage.vue";
+
 export default {
   name: "IndexPage",
   components: {
     TextMachineComponent,
     ServiceAccordion,
-    BannerComponent,
     NavComponent,
+    BannerImage,
   },
   data() {
     return { msg: "pass" };

@@ -49,6 +49,7 @@
   display: flex;
   justify-content: space-between;
   height: 20%;
+  cursor: pointer;
   .accordion-head {
     text-align: left;
     font-size: var(--font-size-big);

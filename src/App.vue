@@ -16,8 +16,8 @@
   //Colores
   --inguz_green: #99ca3b;
   --inguz_pink: #b93ec6;
-  text-align: center;
-  color: #2c3e50;
+  --inguz_background: #11131d;
+  --bodyColor: #2c3e50;
   //paddings | margins | gaps
   --space-s: 0.5rem;
   --space-m: 2.5rem;

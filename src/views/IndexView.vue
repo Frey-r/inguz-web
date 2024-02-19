@@ -16,6 +16,9 @@
 </template>
 
 <style>
+:root {
+  color: var(--bodyColor);
+}
 body {
   margin: 0;
   padding: 0;
@@ -30,6 +33,7 @@ body {
 }
 .home-section {
   display: flex;
+  height: 100svh;
   max-height: 100svh;
 }
 .home-text {
@@ -53,7 +57,7 @@ body {
   left: 50svw;
   top: -20svh;
   position: relative;
-  background-color: #11131d;
+  background-color: var(--inguz_background);
   width: 160svw;
   height: 126svh;
   border-radius: 25%;
@@ -103,5 +107,4 @@ export default {
     this.getResponse();
   },
 };
-
 </script>

@@ -91,10 +91,19 @@ nave {
 <script setup lang="ts">
 const openBackground = () => {
   let { style } = document.getElementById("banner-image-container");
+  let bodyStyle = document.body.style;
+  let banner = document.getElementById("banner-image-container");
   naveOut();
   starsOut();
   setTimeout(() => {
     style.animation = "scroll 2s ease-in";
+    setTimeout(() => {
+      bodyStyle.backgroundColor = "#11131d";
+      bodyStyle.color = "whitesmoke";
+      if (banner) {
+        banner.remove();
+      }
+    }, 2000);
   }, 1900);
 };
 const naveOut = () => {
@@ -105,7 +114,6 @@ const naveOut = () => {
     nave.remove();
   }, 1900);
 };
-
 const starsOut = () => {
   let { style } = document.getElementById("cielo");
   let cielo = document.getElementById("cielo");

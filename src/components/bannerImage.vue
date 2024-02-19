@@ -1,12 +1,12 @@
 <template>
-  <div class="banner-image-container">
-    <cielo class="cielo">
+  <div id="banner-image-container" @click="openBackground">
+    <cielo id="cielo">
       <estrella class="estrella a">⭐</estrella>
       <estrella class="estrella b">⭐</estrella>
       <estrella class="estrella c">⭐</estrella>
       <planeta class="planeta">🪐</planeta>
     </cielo>
-    <nave class="nave"> <span>🚀</span> </nave>
+    <nave id="nave"> <span>🚀</span> </nave>
   </div>
 </template>
 
@@ -25,12 +25,27 @@
     filter: drop-shadow(0px 0px 60px var(--inguz_green));
   }
 }
+@keyframes naveOut {
+  0% {
+    transform: rotate(-23deg) translate(34px, -26px);
+    filter: drop-shadow(0px 0px 60px var(--inguz_green));
+  }
+  100% {
+    transform: rotate(-40deg) translate(35svw, -66svh);
+  }
+}
+@keyframes cieloOut {
+  to {
+    font-size: 0;
+    opacity: 0;
+  }
+}
 @keyframes scroll {
   from {
-    transform: rotate(0deg);
+    transform: rotate(23deg);
   }
   to {
-    transform: rotate(23deg) scale(20%, 200%) translate(-34px, -26px);
+    transform: rotate(0deg) scale(200%);
   }
 }
 .estrella {
@@ -62,16 +77,41 @@ planeta.planeta {
   transform: rotate(-19deg);
 }
 
-.nave {
+nave {
   position: fixed;
   top: 51%;
   left: 13%;
   animation: nave 2s infinite ease-in-out;
-  filter: drop-shadow(0px 0px 5px var(--inguz_green));
   span {
     font-size: 20vh;
   }
 }
 </style>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const openBackground = () => {
+  let { style } = document.getElementById("banner-image-container");
+  naveOut();
+  starsOut();
+  setTimeout(() => {
+    style.animation = "scroll 2s ease-in";
+  }, 1900);
+};
+const naveOut = () => {
+  let nave = document.getElementById("nave");
+  let { style } = document.getElementById("nave");
+  style.animation = "naveOut 2s ease-out";
+  setTimeout(() => {
+    nave.remove();
+  }, 1900);
+};
+
+const starsOut = () => {
+  let { style } = document.getElementById("cielo");
+  let cielo = document.getElementById("cielo");
+  style.animation = "cieloOut 1s ease-out";
+  setTimeout(() => {
+    cielo.remove();
+  }, 990);
+};
+</script>

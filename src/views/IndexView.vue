@@ -26,6 +26,7 @@ body {
   top: 50px;
   left: 50px;
   width: 100%;
+  z-index: 5;
 }
 .home-section {
   display: flex;
@@ -57,7 +58,7 @@ body {
   height: 126svh;
   border-radius: 25%;
   transform: rotate(23deg);
-  z-index: -1;
+  cursor: pointer;
 }
 .service-section {
   display: flex;
@@ -102,4 +103,5 @@ export default {
     this.getResponse();
   },
 };
+
 </script>

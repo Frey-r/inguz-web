@@ -92,7 +92,6 @@ nave {
 const openBackground = () => {
   let { style } = document.getElementById("banner-image-container");
   let bodyStyle = document.body.style;
-  let textStyle = document.body.style;
   let banner = document.getElementById("banner-image-container");
   naveOut();
   starsOut();

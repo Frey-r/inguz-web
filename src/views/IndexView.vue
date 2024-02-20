@@ -19,6 +19,10 @@
 <style>
 :root {
   color: var(--bodyColor);
+  .pink-text {
+    color: var(--inguz_pink);
+    font-weight: 600;
+  }
 }
 body {
   margin: 0;
@@ -35,7 +39,7 @@ body {
 .home-section {
   display: flex;
   height: 100svh;
-  max-height: 100svh;
+  max-height: 101svh;
 }
 .home-text {
   position: absolute;

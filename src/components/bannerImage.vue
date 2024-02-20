@@ -92,11 +92,13 @@ nave {
 const openBackground = () => {
   let { style } = document.getElementById("banner-image-container");
   let bodyStyle = document.body.style;
+  let textStyle = document.body.style;
   let banner = document.getElementById("banner-image-container");
   naveOut();
   starsOut();
   setTimeout(() => {
     style.animation = "scroll 2s ease-in";
+    style.zIndex = "-1";
     setTimeout(() => {
       bodyStyle.backgroundColor = "#11131d";
       bodyStyle.color = "whitesmoke";
@@ -104,6 +106,13 @@ const openBackground = () => {
         banner.remove();
       }
     }, 2000);
+    setTimeout(() => {
+      window.scrollBy({
+        top: window.innerHeight * 1,
+        behavior: "smooth",
+        duration: 500,
+      });
+    }, 1900);
   }, 1900);
 };
 const naveOut = () => {

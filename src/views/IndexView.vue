@@ -10,6 +10,7 @@
       </div>
       <BannerImage class="home-image"></BannerImage>
     </section>
+    <IndexCarruselInfo></IndexCarruselInfo>
     <ServiceAccordion class="service-section"></ServiceAccordion>
   </main>
   <footer></footer>
@@ -77,10 +78,12 @@ import NavComponent from "@/components/NavComponent.vue";
 import ServiceAccordion from "@/components/ServiceAccordion.vue";
 import TextMachineComponent from "@/components/textMachineComponent.vue";
 import BannerImage from "@/components/bannerImage.vue";
+import IndexCarruselInfo from "@/components/IndexCarruselInfo.vue";
 
 export default {
   name: "IndexPage",
   components: {
+    IndexCarruselInfo,
     TextMachineComponent,
     ServiceAccordion,
     NavComponent,
